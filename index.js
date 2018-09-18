@@ -8,7 +8,6 @@ const socketio = require('socket.io');
 const fetch_data = require('./js/fetch_data.js');
 const email = require('./js/email.js');
 const db = require('./js/db.js');
-const port = process.env.port || 3000;
 
 var app = express();
 var server = http.createServer(app);
@@ -84,4 +83,4 @@ function buildEmailBody(user, now, today, summary) {
   return body;
 };
 
-server.listen(port);
+server.listen(process.env.PORT || 3000);
