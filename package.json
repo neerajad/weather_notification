@@ -1,0 +1,22 @@
+{
+  "name": "weather_notification",
+  "version": "1.0.0",
+  "description": "Application to notify weather updates every day to registered users ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Neeraja Devadas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "mongoose": "^5.2.15",
+    "node-cron": "^2.0.1",
+    "nodemailer": "^4.6.8",
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1",
+    "yargs": "^12.0.2"
+  }
+}
