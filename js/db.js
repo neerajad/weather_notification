@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.promise = global.promise;
-mongoose.connect("<<Mongo db user/pwd>>");
+mongoose.connect("<<Mongodb user/pwd>>");
 
 // Model subscriber to save to database
 var subscribers = mongoose.model('subscribers', {
