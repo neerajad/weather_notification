@@ -3,3 +3,10 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
+#header {
+  font-family: Arial Rounded MT Bold;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}

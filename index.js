@@ -15,7 +15,7 @@ var io = socketio(server);
 var subscribers = db.subscribers;
 
 app.set('view engine', 'hbs');
-
+app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
   res.render('home.hbs');
 });
@@ -33,7 +33,7 @@ io.on('connection', (socket) => {
 var transporter = email.transporter;
 var logMessage = '';
 
-cron.schedule('30 20 * * *', () => {
+cron.schedule('10 8 * * *', () => {
   var todaysDate = new Date();
   logMessage = `Job started at 8:00 am on ${todaysDate}\n`;
 

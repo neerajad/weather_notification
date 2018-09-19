@@ -137,3 +137,35 @@ Getting forecast for cordinates 40.62639,20.64917
 Send mail triggered 
 250 2.0.0 OK 1537239541 p30-v6sm15430730qta.4 - gsmtp
 Finishing job for Mon Sep 17 2018 22:59:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Mon Sep 17 2018 23:11:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+250 2.0.0 OK 1537240260 c50-v6sm13567263qtb.8 - gsmtp
+Finishing job for Mon Sep 17 2018 23:11:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Mon Sep 17 2018 23:12:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+250 2.0.0 OK 1537240320 v7-v6sm9252635qkc.29 - gsmtp
+Finishing job for Mon Sep 17 2018 23:12:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Mon Sep 17 2018 23:13:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+250 2.0.0 OK 1537240380 j66-v6sm9081668qkf.50 - gsmtp
+Finishing job for Mon Sep 17 2018 23:13:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Mon Sep 17 2018 23:16:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+250 2.0.0 OK 1537240560 r17-v6sm13624546qkr.78 - gsmtp
+Finishing job for Mon Sep 17 2018 23:16:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Mon Sep 17 2018 23:16:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+250 2.0.0 OK 1537240560 r17-v6sm13624546qkr.78 - gsmtp
+Finishing job for Mon Sep 17 2018 23:16:00 GMT-0400 (Eastern Daylight Time)
+250 2.0.0 OK 1537240561 5-v6sm12587987qts.39 - gsmtp
+Finishing job for Mon Sep 17 2018 23:16:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Tue Sep 18 2018 20:30:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+250 2.0.0 OK 1537317000 k5-v6sm11344257qkf.53 - gsmtp
+Finishing job for Tue Sep 18 2018 20:30:00 GMT-0400 (Eastern Daylight Time)

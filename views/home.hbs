@@ -3,6 +3,7 @@
   <head>
     <meta charset-"utf-8">
     <title>Home</title>
+    <link rel='stylesheet' type='text/css' href='/css/style.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
@@ -15,36 +16,67 @@
       $(document).ready(function(){
         $('#userformid').on('submit', function(e) {
           e.preventDefault();
-          if ($('#firstNameid').val().length > 0 && $('#lastNameid').val().length > 0 && $('#emailid').val().length > 0 && $('#zipcodeid').val().length > 0) {
-            socket.emit('subscribe', {
-              firstName: $('#firstNameid').val(),
-              lastName: $('#lastNameid').val(),
-              email: $('#emailid').val(),
-              zipcode: $('#zipcodeid').val()
-            });
+          if ($('#firstNameid').val().trim().length > 0 && $('#lastNameid').val().trim().length > 0 && $('#emailid').val().trim().length > 0 && $('#zipcodeid').val().trim().length > 0) {
+            if($('#emailid').val().includes('@')) {
+              socket.emit('subscribe', {
+                firstName: $('#firstNameid').val(),
+                lastName: $('#lastNameid').val(),
+                email: $('#emailid').val(),
+                zipcode: $('#zipcodeid').val()
+              });
+            } else {
+              alert('Please enter valid email id');
+            }
           } else {
             alert('Please fill all required fields');
           }
         });
 
         socket.on('subscribed', function (message) {
-          $('#subMessageId').text(message);
+          alert(message);
+          document.getElementById("userformid").reset();
         });
       });
     </script>
   </head>
   <body id="bodyId">
     <div class="" align="center">
-      <div id="subMessageId">
-
-      </div>
-      <form id="userformid">
-        First Name: <input type="text" id="firstNameid" name="fname" placeholder="first name" /> <br/>
-        Last Name: <input type="text" id="lastNameid" name="lname" placeholder="last name" /> <br/>
-        Email: <input type="text" id="emailid" name="email" placeholder="email" /> <br/>
-        Zip Code: <input type="number" id="zipcodeid" name="zip" placeholder="Enter your zip code"/> <br/>
-        <button>Subscribe</button>
-      </form>
+        <section class="py-4">
+          <nav id="header" class="navbar navbar-dark bg-dark fixed-top bg-primary">
+            <div class="container">
+              <div class="text-primary m-auto">
+                Weather Notification
+              </div>
+            </div>
+          </nav>
+        </section>
+        <section class="py-5">
+          <div class="container py-5 px-auto">
+          <form id="userformid">
+            <div class="row">
+              <div class="col-md-6 mx-auto text-left">
+                <input class="form-control" type="text" id="firstNameid" name="fname" placeholder="First Name" /> <br/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mx-auto text-left">
+                <input class="form-control" type="text" id="lastNameid" name="lname" placeholder="Last Name" /> <br/>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mx-auto text-left">
+                <input class="form-control" type="text" id="emailid" name="email" placeholder="Email" /> <br/>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mx-auto text-left">
+                <input class="form-control" type="number" id="zipcodeid" name="zip" placeholder="Enter your zip code"/> <br/>
+              </div>
+            </div>
+          <button class="btn btn-primary">Subscribe</button>
+        </form>
+        </div>
+        </section>
     </div>
   </body>
 </html>
