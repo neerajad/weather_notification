@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.promise = global.promise;
-mongoose.connect('mongodb://admin:password!1@ds161322.mlab.com:61322/weathernotification');
+mongoose.connect('mongodb://<<user>>:<<password>>@ds161322.mlab.com:61322/weathernotification');
 
 // Model subscriber to save to database
 var subscribers = mongoose.model('subscribers', {
