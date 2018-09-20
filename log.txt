@@ -169,3 +169,19 @@ Getting forecast for cordinates 40.62639,20.64917
 Send mail triggered 
 250 2.0.0 OK 1537317000 k5-v6sm11344257qkf.53 - gsmtp
 Finishing job for Tue Sep 18 2018 20:30:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Thu Sep 20 2018 15:09:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+Send mail triggered 
+250 2.0.0 OK 1537470541 y143-v6sm18483535qky.95 - gsmtp
+Finishing job for Thu Sep 20 2018 15:09:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Thu Sep 20 2018 15:09:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+Send mail triggered 
+250 2.0.0 OK 1537470541 y143-v6sm18483535qky.95 - gsmtp
+Finishing job for Thu Sep 20 2018 15:09:00 GMT-0400 (Eastern Daylight Time)
+250 2.0.0 OK 1537470541 20-v6sm3243522qkd.83 - gsmtp
+Finishing job for Thu Sep 20 2018 15:09:00 GMT-0400 (Eastern Daylight Time)
