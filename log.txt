@@ -185,3 +185,19 @@ Send mail triggered
 Finishing job for Thu Sep 20 2018 15:09:00 GMT-0400 (Eastern Daylight Time)
 250 2.0.0 OK 1537470541 20-v6sm3243522qkd.83 - gsmtp
 Finishing job for Thu Sep 20 2018 15:09:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Thu Sep 20 2018 15:30:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+Send mail triggered 
+250 2.0.0 OK 1537471800 g37-v6sm21426748qte.36 - gsmtp
+Finishing job for Thu Sep 20 2018 15:30:00 GMT-0400 (Eastern Daylight Time)
+Job started at 8:00 am on Thu Sep 20 2018 15:30:00 GMT-0400 (Eastern Daylight Time)
+Getting forecast for cordinates 40.62639,20.64917 
+Getting forecast for cordinates 40.62639,20.64917 
+Send mail triggered 
+Send mail triggered 
+250 2.0.0 OK 1537471800 g37-v6sm21426748qte.36 - gsmtp
+Finishing job for Thu Sep 20 2018 15:30:00 GMT-0400 (Eastern Daylight Time)
+250 2.0.0 OK 1537471800 m207-v6sm1614587qke.67 - gsmtp
+Finishing job for Thu Sep 20 2018 15:30:00 GMT-0400 (Eastern Daylight Time)
