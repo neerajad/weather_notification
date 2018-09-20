@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.promise = global.promise;
-mongoose.connect("<<Mongodb user/pwd>>");
+mongoose.connect('mongodb://admin:password!1@ds161322.mlab.com:61322/weathernotification');
 
 // Model subscriber to save to database
 var subscribers = mongoose.model('subscribers', {
@@ -28,6 +28,21 @@ var saveNewSubscriber = (new_Subscriber, callback) => {
   });
 };
 
+// This method adds a new subscriber to database
+var removeSubscriber = (rem_subscriber, callback) => {
+  subscribers.deleteOne(rem_subscriber, function (err) {
+    callback();
+
+  // deleted at most one tank document
+});
+  // subscribers.deleteOne().then((doc) => {
+  //   console.log(doc);
+  //   callback(doc);
+  // }, (e) => {
+  //   console.log('error saving to db');
+  // });
+};
+
 // This method get all subscribers during morning job run to send weather notification
 var listAllSubscribers = (callback) => {
   subscribers.find().then((doc) => {
@@ -40,5 +55,6 @@ var listAllSubscribers = (callback) => {
 module.exports = {
   subscribers,
   saveNewSubscriber,
-  listAllSubscribers
+  listAllSubscribers,
+  removeSubscriber
 }

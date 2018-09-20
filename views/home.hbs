@@ -14,29 +14,39 @@
       });
 
       $(document).ready(function(){
-        $('#userformid').on('submit', function(e) {
+        $('#subId').on('click', function(e) {
           e.preventDefault();
-          if ($('#firstNameid').val().trim().length > 0 && $('#lastNameid').val().trim().length > 0 && $('#emailid').val().trim().length > 0 && $('#zipcodeid').val().trim().length > 0) {
-            if($('#emailid').val().includes('@')) {
-              socket.emit('subscribe', {
-                firstName: $('#firstNameid').val(),
-                lastName: $('#lastNameid').val(),
-                email: $('#emailid').val(),
-                zipcode: $('#zipcodeid').val()
-              });
-            } else {
-              alert('Please enter valid email id');
-            }
-          } else {
-            alert('Please fill all required fields');
-          }
+            fnSubUnSub('subscribe');
+        });
+        $('#unsubId').on('click', function(e) {
+          e.preventDefault();
+            fnSubUnSub('unsubscribe');
         });
 
         socket.on('subscribed', function (message) {
           alert(message);
-          document.getElementById("userformid").reset();
+          if (message != 'Please enter a valid US zip code!') {
+            document.getElementById("userformid").reset();
+          };
         });
       });
+
+      function fnSubUnSub(sub_unsub) {
+        if ($('#firstNameid').val().trim().length > 0 && $('#lastNameid').val().trim().length > 0 && $('#emailid').val().trim().length > 0 && $('#zipcodeid').val().trim().length > 0) {
+          if($('#emailid').val().includes('@')) {
+            socket.emit(sub_unsub, {
+              firstName: $('#firstNameid').val(),
+              lastName: $('#lastNameid').val(),
+              email: $('#emailid').val(),
+              zipcode: $('#zipcodeid').val()
+            });
+          } else {
+            alert('Please enter valid email id');
+          }
+        } else {
+          alert('Please fill all required fields');
+        }
+      }
     </script>
   </head>
   <body id="bodyId">
@@ -73,7 +83,8 @@
                 <input class="form-control" type="number" id="zipcodeid" name="zip" placeholder="Enter your zip code"/> <br/>
               </div>
             </div>
-          <button class="btn btn-primary">Subscribe</button>
+            <input id = "subId" class="btn btn-primary" type="button" name="Subscribe" value="Subscribe" />
+            <input id = "unsubId" class="btn btn-secondary" type="button" name="Unsubscribe" value="Unsubscribe" />
         </form>
         </div>
         </section>

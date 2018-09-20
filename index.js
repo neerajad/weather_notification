@@ -4,6 +4,7 @@ const http = require('http');
 const express = require('express');
 const hbs = require('hbs');
 const socketio = require('socket.io');
+const zipcodes = require('zipcodes');
 
 const fetch_data = require('./js/fetch_data.js');
 const email = require('./js/email.js');
@@ -23,17 +24,33 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
   console.log('new connection received');
   socket.on('subscribe', function(userData) {
-    var new_Subscriber = new subscribers(userData);
-      db.saveNewSubscriber(new_Subscriber, (saveduser) => {
-        socket.emit('subscribed', `${saveduser.email} added to subscription list!`);
-    });
+    var addrDetails = zipcodes.lookup(userData.zipcode);
+    if(undefined != addrDetails){
+      var new_Subscriber = new subscribers(userData);
+        db.saveNewSubscriber(new_Subscriber, (saveduser) => {
+          socket.emit('subscribed', `${saveduser.email} added to subscription list!`);
+      });
+    } else {
+      socket.emit('subscribed', `Please enter a valid US zip code!`);
+    }
   });
-})
+
+  socket.on('unsubscribe', function(userData) {
+    var addrDetails = zipcodes.lookup(userData.zipcode);
+    if(undefined != addrDetails){
+        db.removeSubscriber(userData, () => {
+        socket.emit('subscribed', `${userData.email} removed from subscription list!`);
+      });
+    } else {
+      socket.emit('subscribed', `Please enter a valid US zip code!`);
+    }
+  });
+});
 
 var transporter = email.transporter;
 var logMessage = '';
 
-cron.schedule('10 8 * * *', () => {
+cron.schedule('* * * * *', () => {
   var todaysDate = new Date();
   logMessage = `Job started at 8:00 am on ${todaysDate}\n`;
 
