@@ -50,7 +50,7 @@ io.on('connection', (socket) => {
 var transporter = email.transporter;
 var logMessage = '';
 
-cron.schedule('47 15 * * *', () => {
+cron.schedule('30 16 * * *', () => {
   var todaysDate = new Date();
   logMessage = `Job started at 8:00 am on ${todaysDate}\n`;
 
